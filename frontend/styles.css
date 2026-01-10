@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    padding-top: 60px;
+    margin: 0;
+}
+
+.btn {
+    min-width: 100px;
+    min-height: 40px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+#status {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="email"] {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.forms {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.login, .signup {
+    padding: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#loginMessage {
+    color: red;
+    min-height: 1em;
+}
+
+#signupMessage {
+    color: green;
+    min-height: 1em;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .forms {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .login, .signup {
+        width: 100%;   
+        max-width: 400px;  
+    }
+}
+

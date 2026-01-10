@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Magic Link Auth</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Magic Link Authentication</h1>
-
-    <p id="status">You are not logged in</p>
-
-    <h2>Login</h2>
-    <form id="loginForm">
+    
+    <header>
+      <h1>Magic Link Authentication</h1>
+  
+      <p id="status">You are not logged in</p>
+    </header>
+ 
+    <div class="forms">
+    <div class="login">
+     <h2>Login</h2> 
+      <form id="loginForm">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </div>
+    <div class="signup">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
         <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">Login</button>
-    </form>
-    <p id="loginMessage"></p>
+      <button type="submit" class="btn">Sign Up</button>
+     </form>
+     <p id="signupMessage"></p>
+    </div>
+ </div>
 
-    <h2>Sign Up</h2>
-    <form id="signupForm">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">Sign Up</button>
-    </form>
-    <p id="signupMessage"></p>
 </body>
 </html>
