@@ -9,6 +9,8 @@ body {
     margin: 0;
 }
 
+
+
 .btn {
     min-width: 100px;
     min-height: 40px;
@@ -28,20 +30,39 @@ body {
 }
 
 
+
+.navbar {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+    gap: 10px;
+    background-color: white;
+}
+
+
+
 h1 {
     text-align: center;
 }
 
-#status {
+#loginStatus {
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
 }
 
 input[type="email"] {
-    flex: 1;
     padding: 8px;
     font-size: 14px;
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 250px;
 }
 
 .forms {
