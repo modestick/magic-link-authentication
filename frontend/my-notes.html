@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes - Magic Link Auth</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="my-notes.js" defer></script>
+</head>
+<body>
+
+    <div class="navbar">
+      <a href="index.html" class="btn" style="text-decoration: none;">Home</a>
+      <button class="btn logout">Logout</button>
+    </div>
+    
+    <header>
+      <h1>My Notes</h1>
+      <p id="loginStatus">You are not logged in</p>
+    </header>
+
+    <div id="notesSection" style="max-width: 800px; margin: 20px auto; padding: 20px;">
+      <h2>Add Note</h2>
+      <form id="itemForm">
+        <input type="text" id="itemTitle" placeholder="Title" required style="width: 100%; padding: 8px; margin: 5px 0; border: 2px solid black; border-radius: 8px;">
+        <textarea id="itemContent" placeholder="Content" style="width: 100%; padding: 8px; margin: 5px 0; border: 2px solid black; border-radius: 8px; min-height: 100px;"></textarea>
+        <input type="hidden" id="itemId">
+        <button type="submit" class="btn">Save</button>
+        <button type="button" class="btn" id="cancelEdit" style="display: none;">Cancel</button>
+      </form>
+      <div id="itemsList" style="margin-top: 30px;"></div>
+    </div>
+
+</body>
+</html>
