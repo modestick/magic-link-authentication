@@ -170,7 +170,9 @@ signupForm.addEventListener('submit', function(e) {
 logoutBtn.addEventListener('click', logoutUser);
 
 myNotesBtn.addEventListener('click', function() {
-  alert('Coming soon!');
+  if (sessionToken) {
+    window.location.href = 'my-notes.html';
+  }
 });
 
 window.addEventListener('DOMContentLoaded', function() {
