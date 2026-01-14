@@ -22,11 +22,17 @@ app.get('/api/test', (req, res) => {
 app.post('/api/register', (req, res) => {
   const { email } = req.body;
   
-  if (!email || !email.includes('@')) {
+  if (!email || typeof email !== 'string') {
+    return res.status(400).json({ error: 'Email is required' });
+  }
+  
+  const emailTrimmed = email.trim();
+  
+  if (emailTrimmed.length === 0 || !emailTrimmed.includes('@')) {
     return res.status(400).json({ error: 'Invalid email' });
   }
   
-  registerUser(email, (err, result) => {
+  registerUser(emailTrimmed, (err, result) => {
     if (err) {
       if (err.message === 'User already exists') {
         return res.status(409).json({ error: 'User already exists' });
@@ -34,7 +40,7 @@ app.post('/api/register', (req, res) => {
       return res.status(500).json({ error: 'Server error' });
     }
     
-    createMagicLink(email, (err, linkResult) => {
+    createMagicLink(emailTrimmed, (err, linkResult) => {
       if (err) {
         return res.status(500).json({ error: 'Server error' });
       }
@@ -51,11 +57,17 @@ app.post('/api/register', (req, res) => {
 app.post('/api/login', (req, res) => {
   const { email } = req.body;
   
-  if (!email || !email.includes('@')) {
+  if (!email || typeof email !== 'string') {
+    return res.status(400).json({ error: 'Email is required' });
+  }
+  
+  const emailTrimmed = email.trim();
+  
+  if (emailTrimmed.length === 0 || !emailTrimmed.includes('@')) {
     return res.status(400).json({ error: 'Invalid email' });
   }
   
-  createMagicLink(email, (err, result) => {
+  createMagicLink(emailTrimmed, (err, result) => {
     if (err) {
       if (err.message === 'User not found. Please register first.') {
         return res.status(404).json({ error: 'User not found. Please register first.' });

@@ -106,10 +106,7 @@ function displayItems(items) {
   list.innerHTML = '<h3>Your notes:</h3>';
   items.forEach(item => {
     const itemDiv = document.createElement('div');
-    itemDiv.style.border = '2px solid black';
-    itemDiv.style.borderRadius = '8px';
-    itemDiv.style.padding = '15px';
-    itemDiv.style.margin = '10px 0';
+    itemDiv.className = 'note-item';
     itemDiv.innerHTML = `
       <h4>${escapeHtml(item.title)}</h4>
       <p>${escapeHtml(item.content || '')}</p>

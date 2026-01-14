@@ -10,7 +10,7 @@
 <body>
 
     <div class="navbar">
-      <a href="index.html" class="btn" style="text-decoration: none;">Home</a>
+      <a href="index.html" class="btn">Home</a>
       <button class="btn logout">Logout</button>
     </div>
     
@@ -19,16 +19,16 @@
       <p id="loginStatus">You are not logged in</p>
     </header>
 
-    <div id="notesSection" style="max-width: 800px; margin: 20px auto; padding: 20px;">
+    <div id="notesSection">
       <h2>Add Note</h2>
       <form id="itemForm">
-        <input type="text" id="itemTitle" placeholder="Title" required style="width: 100%; padding: 8px; margin: 5px 0; border: 2px solid black; border-radius: 8px;">
-        <textarea id="itemContent" placeholder="Content" style="width: 100%; padding: 8px; margin: 5px 0; border: 2px solid black; border-radius: 8px; min-height: 100px;"></textarea>
+        <input type="text" id="itemTitle" placeholder="Title" required>
+        <textarea id="itemContent" placeholder="Content"></textarea>
         <input type="hidden" id="itemId">
         <button type="submit" class="btn">Save</button>
         <button type="button" class="btn" id="cancelEdit" style="display: none;">Cancel</button>
       </form>
-      <div id="itemsList" style="margin-top: 30px;"></div>
+      <div id="itemsList"></div>
     </div>
 
 </body>

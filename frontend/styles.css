@@ -3,30 +3,36 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding-top: 60px;
     margin: 0;
+    min-height: 100vh;
 }
-
-
 
 .btn {
     min-width: 100px;
     min-height: 40px;
-    background-color: white;
-    border: 2px solid black;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
     border-radius: 8px;
-    padding: 6px 12px;
+    padding: 10px 20px;
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-    background-color: black;
-    color: white;
-    border-color: white;
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 a.btn {
@@ -36,8 +42,6 @@ a.btn {
     justify-content: center;
 }
 
-
-
 .navbar {
     display: none;
     justify-content: flex-end;
@@ -46,72 +50,202 @@ a.btn {
     top: 0;
     right: 0;
     width: 100%;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 14px;
-    gap: 10px;
+    gap: 15px;
     background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
-
-
 
 h1 {
     text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    color: #34495e;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 #loginStatus {
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
     text-align: center;
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
 }
 
 input[type="email"] {
-    padding: 8px;
-    font-size: 14px;
-    border: 2px solid black;
-    border-radius: 8px;
     width: 250px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 .forms {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .login, .signup {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    border: 2px solid black;
-    border-radius: 8px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.login h2, .signup h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+#loginMessage, #signupMessage {
+    min-height: 1.5em;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 #loginMessage {
-    color: red;
-    min-height: 1em;
+    color: #e74c3c;
 }
 
 #signupMessage {
-    color: green;
-    min-height: 1em;
+    color: #27ae60;
 }
 
+#notesSection {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
+#itemForm {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
 
+#itemsList {
+    margin-top: 40px;
+}
 
+.note-item {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
 
+.note-item:hover {
+    border-color: #4a90e2;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+    transform: translateY(-2px);
+}
 
+.note-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 18px;
+}
 
+.note-item p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.note-item .btn {
+    margin-right: 10px;
+    min-width: 80px;
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.delete-item {
+    background-color: #e74c3c;
+}
+
+.delete-item:hover {
+    background-color: #c0392b;
+}
+
+.edit-item {
+    background-color: #f39c12;
+}
+
+.edit-item:hover {
+    background-color: #e67e22;
+}
 
 @media (max-width: 600px) {
     .forms {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
         align-items: center;
+        padding: 0 20px;
     }
+    
     .login, .signup {
-        width: 100%;   
-        max-width: 400px;  
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    input[type="email"] {
+        width: 100%;
+    }
+    
+    #notesSection {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .navbar {
+        padding: 10px 15px;
     }
 }
-

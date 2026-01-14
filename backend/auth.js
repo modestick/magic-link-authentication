@@ -7,8 +7,9 @@ function generateToken() {
 
 function registerUser(email, callback) {
   const db = getDatabase();
+  const emailNormalized = email.trim().toLowerCase();
   
-  db.get('SELECT id FROM users WHERE email = ?', [email], (err, user) => {
+  db.get('SELECT id FROM users WHERE email = ?', [emailNormalized], (err, user) => {
     if (err) {
       return callback(err, null);
     }
@@ -17,19 +18,20 @@ function registerUser(email, callback) {
       return callback(new Error('User already exists'), null);
     }
     
-    db.run('INSERT INTO users (email) VALUES (?)', [email], function(err) {
+    db.run('INSERT INTO users (email) VALUES (?)', [emailNormalized], function(err) {
       if (err) {
         return callback(err, null);
       }
-      callback(null, { userId: this.lastID, email });
+      callback(null, { userId: this.lastID, email: emailNormalized });
     });
   });
 }
 
 function createMagicLink(email, callback) {
   const db = getDatabase();
+  const emailNormalized = email.trim().toLowerCase();
   
-  db.get('SELECT id FROM users WHERE email = ?', [email], (err, user) => {
+  db.get('SELECT id FROM users WHERE email = ?', [emailNormalized], (err, user) => {
     if (err) {
       return callback(err, null);
     }
@@ -38,7 +40,7 @@ function createMagicLink(email, callback) {
       return callback(new Error('User not found. Please register first.'), null);
     }
     
-    createLinkForUser(user.id, email, callback);
+    createLinkForUser(user.id, emailNormalized, callback);
   });
 }
 
