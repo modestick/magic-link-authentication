@@ -1,0 +1,17 @@
+version: "3.8"
+
+
+services:
+    backend:
+        build: ./backend
+        container_name: backend
+
+    nginx:
+        build:
+            context: .
+            dockerfile: nginx/Dockerfile
+        container_name: nginx
+        ports:
+            - 80:80
+        depends_on:
+            - backend

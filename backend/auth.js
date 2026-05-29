@@ -58,7 +58,7 @@ function createLinkForUser(userId, email, callback) {
         return callback(err, null);
       }
       
-      const magicLink = `http://localhost:3000/api/verify/${token}`;
+      const magicLink = `http://localhost/api/verify/${token}`;
       callback(null, { magicLink, email });
     }
   );
